@@ -11,7 +11,7 @@ function QrCodeListApp() {
       const newList = [...list, inputValue.trim()];
       setList(newList);
       const encodedList = encodeURIComponent(JSON.stringify(newList));
-      setQrValue(`${window.location.origin}/list?list=${encodedList}`);
+      setQrValue(`${window.location.origin}/qr-code-list-app/list?list=${encodedList}`);
       setInputValue('');
     }
   };
@@ -20,7 +20,7 @@ function QrCodeListApp() {
     const newList = list.filter((_, i) => i !== index);
     setList(newList);
     const encodedList = encodeURIComponent(JSON.stringify(newList));
-    setQrValue(`${window.location.origin}/list?list=${encodedList}`);
+    setQrValue(`${window.location.origin}/qr-code-list-app/list?list=${encodedList}`);
   };
 
   const handlePrint = () => {

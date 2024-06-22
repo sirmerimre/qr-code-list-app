@@ -10,7 +10,7 @@ function App() {
      <Router basename="/qr-code-list-app">
       <Routes>
         <Route exact path="/" element={<QrCodeListApp />} />
-        <Route exact path="/list" element={<ListPage />} />
+        <Route path="/list" element={<ListPage />} />
       </Routes>
      </Router>
   </div>
