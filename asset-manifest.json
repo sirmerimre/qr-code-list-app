@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/sirmerimre/qr-code-list-app/static/css/main.c143b020.css",
+    "main.js": "/sirmerimre/qr-code-list-app/static/js/main.cd04f935.js",
+    "static/js/453.ead0cff0.chunk.js": "/sirmerimre/qr-code-list-app/static/js/453.ead0cff0.chunk.js",
+    "index.html": "/sirmerimre/qr-code-list-app/index.html",
+    "main.c143b020.css.map": "/sirmerimre/qr-code-list-app/static/css/main.c143b020.css.map",
+    "main.cd04f935.js.map": "/sirmerimre/qr-code-list-app/static/js/main.cd04f935.js.map",
+    "453.ead0cff0.chunk.js.map": "/sirmerimre/qr-code-list-app/static/js/453.ead0cff0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c143b020.css",
+    "static/js/main.cd04f935.js"
+  ]
+}
