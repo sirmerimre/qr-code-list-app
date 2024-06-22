@@ -7,12 +7,12 @@ import './App.css';
 function App() {
   return (
   <div className="App">
-     <Router>
+     <Router basename={process.env.PUBLIC_URL}>
           <Routes>
             <Route path="/" element={<QrCodeListApp />} />
             <Route path="/list" element={<ListPage />} />
           </Routes>
-        </Router>
+     </Router>
   </div>
   );
 }
