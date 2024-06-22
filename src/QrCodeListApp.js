@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import QRCode from 'qrcode.react';
 import QrCodeComponent from './QrCodeComponent';
 
 function QrCodeListApp() {
@@ -11,20 +10,26 @@ function QrCodeListApp() {
     if (inputValue.trim()) {
       const newList = [...list, inputValue.trim()];
       setList(newList);
-      setQrValue(JSON.stringify(newList));
+      const encodedList = encodeURIComponent(JSON.stringify(newList));
+      setQrValue(`${window.location.origin}/list?list=${encodedList}`);
       setInputValue('');
     }
   };
 
-   const handleRemoveItem = (index) => {
-      const newList = list.filter((_, i) => i !== index);
-      setList(newList);
-      setQrValue(JSON.stringify(newList));
-    };
+  const handleRemoveItem = (index) => {
+    const newList = list.filter((_, i) => i !== index);
+    setList(newList);
+    const encodedList = encodeURIComponent(JSON.stringify(newList));
+    setQrValue(`${window.location.origin}/list?list=${encodedList}`);
+  };
 
-   const handlePrint = () => {
-      window.print();
-    };
+  const handlePrint = () => {
+    window.print();
+  };
+
+  const handleTest = () => {
+    window.location.href = qrValue
+  }
 
   return (
     <div style={{ padding: '20px' }}>
@@ -40,20 +45,21 @@ function QrCodeListApp() {
       </div>
       <h2>List</h2>
       <ul>
-              {list.map((item, index) => (
-                <li key={index}>
-                  {item}
-                  <button onClick={() => handleRemoveItem(index)}>Remove</button>
-                </li>
-              ))}
-            </ul>
+        {list.map((item, index) => (
+          <li key={index}>
+            {item}
+            <button onClick={() => handleRemoveItem(index)}>Remove</button>
+          </li>
+        ))}
+      </ul>
       <h2>QR Code</h2>
       {qrValue && (
-              <div>
-                <QrCodeComponent value={qrValue} />
-                <button onClick={handlePrint}>Print QR Code</button>
-              </div>
-            )}
+        <div>
+          <QrCodeComponent value={qrValue} />
+          <button onClick={handlePrint}>Print QR Code</button>
+          <button onClick={handleTest}>TEST LIST</button>
+        </div>
+      )}
     </div>
   );
 }
